@@ -4,7 +4,7 @@
 
 Cambiará el nombre de los adaptadores de red, de enp0s3 a eth0 y sucesivos.  
 ```sh
-$~ sudo nano /etc/default/grub
+~$ sudo nano /etc/default/grub
 ```
 
 ```
@@ -17,14 +17,14 @@ GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevnames"
 
 Luego actualizaremos grub y reiniciaremos la máquina.  
 ```sh
-$~ sudo update-grub
-$~ reboot
+~$ sudo update-grub
+~$ reboot
 ```
 
 Cuando reinicie podremos comprobar que los nombres cambiaron usando uno de los siguientes comandos.  
 ```sh
-$~ ls /sys/class/net/
-$~ ip a
+~$ ls /sys/class/net/
+~$ ip a
 ```
 
 ## Configuración de red por consola
@@ -32,7 +32,7 @@ Se hará utilizando **netplan**, que será una una descripción de los adaptador
 En el ejemplo será un servidor con dos interfaces de red.
 
 ```sh
-$~ sudo nano /etc/netplan/01-network-manager-all.yaml
+~$ sudo nano /etc/netplan/01-network-manager-all.yaml
 ```
 
 ```yaml
@@ -57,6 +57,6 @@ network:
 Para aplicar los cambios de la configuración se ejecutarán los siguientes comandos, el primero para aplicar cambios y ver si hay fallos, y el segundo para que la configuración tenga efecto.  
 
 ```sh
-$~ sudo netplan --debug generate
-$~ sudo netplan apply
+~$ sudo netplan --debug generate
+~$ sudo netplan apply
 ```

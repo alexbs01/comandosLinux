@@ -9,8 +9,8 @@ Cambiará el nombre de los adaptadores de red, de enp0s3 a eth0 y sucesivos.
 # En la línea
 GRUB_CMDLINE_LINUX=""
 
-# Añadir lo siguiente
-GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevnames"
+# Añadir entre las comillas lo siguiente
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevnames=0"
 ```
 
 Luego actualizaremos grub y reiniciaremos la máquina.  
